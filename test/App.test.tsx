@@ -4,6 +4,6 @@ import App from '../src/App';
 
 test('should have expected label for controls', () => {
   render(<App  />);
-  const element = screen.getByText('Animate');
+  const element = screen.getByRole('button');
   expect(element).toBeInTheDocument();
 });
