@@ -1,6 +1,4 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import d3SVG from "../d3SVG";
+import d3SVG from "@graphs/d3SVG";
 
 describe("getHistogram", () => {
   test("should return an element", () => {

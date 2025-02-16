@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import lineChart from "./lineChart";
+import lineChart from "@graphs/lineChart";
 import AnimateControl from "@components/AnimateControl";
 // import getHistogram from './getHistogram';
 

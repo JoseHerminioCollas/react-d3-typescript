@@ -1,6 +1,4 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import histogram from "../histogram";
+import histogram from "@graphs/histogram";
 
 describe("getHistogram", () => {
   test("should return an element", () => {

@@ -1,6 +1,4 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import lineChart from '../lineChart';
+import lineChart from '@graphs/lineChart';
 
 describe('LineChart', ()=>{
   test('should return an element',()=>{
