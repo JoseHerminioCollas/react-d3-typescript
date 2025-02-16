@@ -12,7 +12,7 @@ const d3SVG = () => {
     .attr("text-anchor", "start")
     .attr("x", 100)
     .attr("y", 100)
-    .text(data);
+    .text('abc');
   return svg.node();
 };
 
