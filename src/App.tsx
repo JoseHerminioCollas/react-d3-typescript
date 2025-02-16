@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import lineChart from "./lineChart";
+import AnimateControl from "@components/AnimateControl";
 // import getHistogram from './getHistogram';
 
 const initData = [0, 1, 1, 1, 1, 20, 2, 90, 4, 6, 4, 4, 60, 100];
@@ -8,7 +9,7 @@ const App: React.FC = () => {
   const svgRef = useRef<any>(null);
   const intervalID = useRef<any>(null);
   const [data, setData] = useState(initData);
-  const [animationOn, setAnimationON] = useState<boolean>(true);
+  const [animationOn, setAnimationOn] = useState<boolean>(true);
 
   useEffect(() => {
     svgRef.current.innerHTML = "";
@@ -36,15 +37,10 @@ const App: React.FC = () => {
         <rect x={0} y={0} fill="gray" width="100%" height="100%" />
         <g ref={svgRef}></g>
       </svg>
-      <section>
-         Animate 
-        {!animationOn && (
-          <button onClick={() => setAnimationON(true)}>ON</button>
-        )}
-        {animationOn && (
-          <button onClick={() => setAnimationON(false)}>OFF</button>
-        )}
-      </section>
+      <AnimateControl
+        animationOn={animationOn}
+        setAnimationOn={setAnimationOn}
+      />
     </div>
   );
 };
