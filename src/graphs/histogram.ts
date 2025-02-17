@@ -1,6 +1,20 @@
 import { create, bin, axisBottom, scaleLinear, max, axisLeft } from "d3";
+// Define the type using D3 types
+/*
+type Bin = {
+  x0: number;
+  x1: number;
+  length: number;
+};
 
+const bins: Bin[] = [
+  { x0: 0, x1: 10, length: 5 },
+  { x0: 10, x1: 20, length: 15 },
+  { x0: 20, x1: 30, length: 25 },
+];
+*/
 const histogram = (data: any) => {
+  const margin = 30;
   const svg = create("svg");
   const graphDimensions = { width: 300, height: 300 };
   const bins: any = bin().thresholds(5)(data);
@@ -10,18 +24,20 @@ const histogram = (data: any) => {
   );
   const maxBinLen = max(bins, (d: any) => d.length) as any;
   const yS = scaleLinear([0, maxBinLen], [graphDimensions.height, 0]);
-  svg
+  const frame = svg
     .append("g")
+    .attr("transform", `translate(${margin}, ${margin})`);
+  frame
     .append("rect")
     .attr("width", graphDimensions.width)
     .attr("height", graphDimensions.height)
-    .attr("fill", "green");
-  svg
+    .attr("fill", "blue");
+  frame
     .append("g")
     .attr("transform", `translate(0,${graphDimensions.height})`)
     .call(axisBottom(xS));
-  svg.append("g").call(axisLeft(yS));
-  svg
+  frame.append("g").call(axisLeft(yS));
+  frame
     .append("g")
     .attr("fill", "red")
     .selectAll()
