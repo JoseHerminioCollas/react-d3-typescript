@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import lineChart from "@graphs/lineChart";
 import AnimateControl from "@components/AnimateControl";
 import histogram from "@graphs/histogram";
+import "@styles/App.css";
 
 const initData = [0, 1, 1, 1, 1, 20, 2, 90, 4, 6, 4, 4, 60, 100];
 const svgDimensions = { width: 360, height: 360 };
@@ -44,32 +45,34 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div id="appFrame">
       <svg width={svgDimensions.width} height={svgDimensions.height}>
         <rect x={0} y={0} fill="gray" width="100%" height="100%" />
         <g ref={svgRef}></g>
       </svg>
-      <label>
-        <h2>Chart Type</h2>
-        Line
-        <input
-          type="checkbox"
-          name="line"
-          checked={chartType === "line"}
-          onChange={handleChange}
+      <section>
+        <label>
+          <h2>Chart Type</h2>
+          Line
+          <input
+            type="checkbox"
+            name="line"
+            checked={chartType === "line"}
+            onChange={handleChange}
+          />
+          Histogram
+          <input
+            type="checkbox"
+            name="histogram"
+            checked={chartType === "histogram"}
+            onChange={handleChange}
+          />
+        </label>
+         </section>
+        <AnimateControl
+          animationOn={animationOn}
+          setAnimationOn={setAnimationOn}
         />
-        Histogram
-        <input
-          type="checkbox"
-          name="histogram"
-          checked={chartType === "histogram"}
-          onChange={handleChange}
-        />
-      </label>
-      <AnimateControl
-        animationOn={animationOn}
-        setAnimationOn={setAnimationOn}
-      />
     </div>
   );
 };
