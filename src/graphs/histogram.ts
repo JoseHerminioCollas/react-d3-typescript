@@ -8,10 +8,8 @@ const histogram = (data: any) => {
     [bins[0].x0, bins[bins.length - 1].x1],
     [0, graphDimensions.width],
   );
-  const yS = scaleLinear(
-    [0, max(bins) as any],
-    [graphDimensions.height, 0],
-  );
+  const maxBinLen = max(bins, (d: any) => d.length) as any;
+  const yS = scaleLinear([0, maxBinLen], [graphDimensions.height, 0]);
   svg
     .append("g")
     .append("rect")
