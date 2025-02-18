@@ -6,10 +6,30 @@
   padding: 1rem;
   text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   min-height: 100vh;
+}
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #777;
+}
+#chart_controls{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: unset;
+}
+@media (min-width: 700px) {
+  #controls {
+    flex-direction: column;
+  }
 }
 h1 {
   font-size: 1em;
@@ -24,9 +44,9 @@ section {
   background-color: #333;
   border-radius: 1em;
   margin: 0.5em;
-  padding: 0.5em;
+  padding: 0.25em;
 }
-input[type="checkbox"]{
+input[type="checkbox"] {
   transform: scale(1.5);
   margin: 1em;
   cursor: pointer;
@@ -50,4 +70,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
- 

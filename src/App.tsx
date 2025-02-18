@@ -47,34 +47,38 @@ const App: React.FC = () => {
 
   return (
     <>
-      <h1>React TypeScript D3</h1>
-      <svg width={svgDimensions.width} height={svgDimensions.height}>
-        <rect x={0} y={0} fill="currentcolor" width="100%" height="100%" />
-        <g ref={svgRef}></g>
-      </svg>
-      <section>
-        <label>
-          <h2>Chart Type</h2>
-          Line
-          <input
-            type="checkbox"
-            name="line"
-            checked={chartType === "line"}
-            onChange={handleChange}
+      <h1>React & D3</h1>
+      <section id="chart_controls">
+        <svg width={svgDimensions.width} height={svgDimensions.height}>
+          <rect x={0} y={0} fill="currentcolor" width="100%" height="100%" />
+          <g ref={svgRef}></g>
+        </svg>
+        <section id="controls">
+          <section>
+            <label>
+              <h2>Chart Type</h2>
+              Line
+              <input
+                type="checkbox"
+                name="line"
+                checked={chartType === "line"}
+                onChange={handleChange}
+              />
+              Histogram
+              <input
+                type="checkbox"
+                name="histogram"
+                checked={chartType === "histogram"}
+                onChange={handleChange}
+              />
+            </label>
+          </section>
+          <AnimateControl
+            animationOn={animationOn}
+            setAnimationOn={setAnimationOn}
           />
-          Histogram
-          <input
-            type="checkbox"
-            name="histogram"
-            checked={chartType === "histogram"}
-            onChange={handleChange}
-          />
-        </label>
+        </section>
       </section>
-      <AnimateControl
-        animationOn={animationOn}
-        setAnimationOn={setAnimationOn}
-      />
     </>
   );
 };
