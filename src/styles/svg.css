@@ -1,21 +1,22 @@
 svg {
   color: black;
+  border-radius: 0.5em;
 }
 svg .background {
-  color: gray;
+  color: #eee;
 }
 svg .tick {
-  color: darkblue;
+  color: #333;
 }
 svg .domain {
   color: blue;
 }
 svg path {
-  color: green;
+  color: darkblue;
 }
 svg rect {
   color: #aaa;
 }
 svg .bin{
-  color: green;
+  color: darkblue;
 }
