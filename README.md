@@ -2,6 +2,9 @@
 
 The purpose of this repository is to establish strategies that can be used while working with D3.js in the context of React.
 
+### The live website can be found here:
+<a href="https://goatstone.com/react-d3/">https://goatstone.com/react-d3/</a>
+
 ### The React website:
 <a href="https://react.dev/">React (https://react.dev)</a>
 
