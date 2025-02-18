@@ -45,7 +45,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div id="appFrame">
+    <>
+      <h1>React TypeScript D3</h1>
       <svg width={svgDimensions.width} height={svgDimensions.height}>
         <rect x={0} y={0} fill="gray" width="100%" height="100%" />
         <g ref={svgRef}></g>
@@ -68,12 +69,12 @@ const App: React.FC = () => {
             onChange={handleChange}
           />
         </label>
-         </section>
-        <AnimateControl
-          animationOn={animationOn}
-          setAnimationOn={setAnimationOn}
-        />
-    </div>
+      </section>
+      <AnimateControl
+        animationOn={animationOn}
+        setAnimationOn={setAnimationOn}
+      />
+    </>
   );
 };
 
