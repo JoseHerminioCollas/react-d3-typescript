@@ -31,7 +31,8 @@ const histogram = (data: any) => {
     .append("rect")
     .attr("width", graphDimensions.width)
     .attr("height", graphDimensions.height)
-    .attr("fill", "blue");
+    .attr("fill", "currentcolor")
+    .attr("class", "background");
   frame
     .append("g")
     .attr("transform", `translate(0,${graphDimensions.height})`)
@@ -39,14 +40,15 @@ const histogram = (data: any) => {
   frame.append("g").call(axisLeft(yS));
   frame
     .append("g")
-    .attr("fill", "red")
+    .attr("fill", "currentcolor")
     .selectAll()
     .data(bins)
     .join("rect")
     .attr("x", (d: any) => xS(d.x0))
     .attr("width", (d: any) => xS(d.x1) - xS(d.x0))
     .attr("y", (d: any) => yS(d.length))
-    .attr("height", (d: any) => yS(0) - yS(d.length));
+    .attr("height", (d: any) => yS(0) - yS(d.length))
+    .attr("class", "bin");
 
   return svg.node();
 };

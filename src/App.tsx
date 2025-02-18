@@ -3,6 +3,7 @@ import lineChart from "@graphs/lineChart";
 import AnimateControl from "@components/AnimateControl";
 import histogram from "@graphs/histogram";
 import "@styles/App.css";
+import "@styles/svg.css";
 
 const initData = [0, 1, 1, 1, 1, 20, 2, 90, 4, 6, 4, 4, 60, 100];
 const svgDimensions = { width: 360, height: 360 };
@@ -48,7 +49,7 @@ const App: React.FC = () => {
     <>
       <h1>React TypeScript D3</h1>
       <svg width={svgDimensions.width} height={svgDimensions.height}>
-        <rect x={0} y={0} fill="gray" width="100%" height="100%" />
+        <rect x={0} y={0} fill="currentcolor" width="100%" height="100%" />
         <g ref={svgRef}></g>
       </svg>
       <section>

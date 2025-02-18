@@ -17,7 +17,8 @@ const lineChart = (data: any) => {
     .append("rect")
     .attr("width", graphDimensions.width)
     .attr("height", graphDimensions.height)
-    .attr("fill", "blue");
+    .attr("fill", "currentcolor")
+    .attr("class", "background");
   frame
     .append("g")
     .attr("transform", `translate(0,${graphDimensions.height})`)
@@ -27,7 +28,7 @@ const lineChart = (data: any) => {
     .append("g")
     .append("path")
     .attr("fill", "none")
-    .attr("stroke", "red")
+    .attr("stroke", "currentcolor")
     .attr("stroke-width", "10")
     .attr("d", line(data));
 

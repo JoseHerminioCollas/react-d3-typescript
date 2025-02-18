@@ -1,0 +1,21 @@
+svg {
+  color: black;
+}
+svg .background {
+  color: gray;
+}
+svg .tick {
+  color: darkblue;
+}
+svg .domain {
+  color: blue;
+}
+svg path {
+  color: green;
+}
+svg rect {
+  color: #aaa;
+}
+svg .bin{
+  color: green;
+}
